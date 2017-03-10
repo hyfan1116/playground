@@ -1,0 +1,16 @@
+t = linspace(-90,90);
+q11 = 18.87*10^6;
+q22 = 1.92*10^6;
+q66 = 0.85*10^6;
+q12 = 0.57*10^6;
+q1 = q11.*(cosd(t)).^4 + 2.*(q12+2*q66).*(sind(t).^2).*(cosd(t).^2)+q22.*(sind(t).^4);
+q2 = (q11 + q22 - 4*q66).*(sind(t).^2).*(cosd(t).^2)+q12.*(sind(t).^4+cosd(t).^4);
+q3 = q11.*(sind(t).^4) + 2.*(q12+2*q66).*(sind(t).^2).*(cosd(t).^2)+q22.*(cosd(t).^4);
+q4 = (q11 - q12 - 2*q66).*sind(t).*(cosd(t).^3)+(q12 - q22 +2*q66).*(sind(t).^3).*cosd(t);
+q5 = (q11 - q12 - 2*q66).*(sind(t).^3).*cosd(t)+(q12 - q22 +2*q66).*sind(t).*(cosd(t).^3);
+q6 = (q11+q22-2*q12-2*q66)*(sind(t).^2).*(cosd(t).^2)+q66.*(sind(t).^4+cosd(t).^4);
+plot(t, q1, t, q2, t, q3, t, q4, t, q5, t, q6);
+title('Q-bars');
+xlabel('theta');
+legend('Q11B','Q12B','Q22B','Q16B','Q26B','Q66B','location','southeast');
+grid on;
