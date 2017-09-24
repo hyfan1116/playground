@@ -1,0 +1,17 @@
+div {
+
+  border: 2px solid;
+  display: table-cell;
+  vertical-align:middle;
+}
+
+#div1{
+  height: 500px; width: 400px;
+}
+#div2{
+  height: 400px; width: 300px;
+  margin: auto;
+}
+#div3{
+  height: 300px; width: 200px;
+}
